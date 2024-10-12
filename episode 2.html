@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regarder Épisode</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        header {
+            background-color: #333;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .video-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2em;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #333;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 1em 0;
+         }
+         nav a:hover {
+            background-color: #555;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+        .buttons {
+        text-align: center;
+        margin-bottom: 10px;
+        
+    }
+    .buttons button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        background-color: #555;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .buttons button:hover {
+        background-color: #777;
+    }
+    .video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+.video-container {
+    width: 800px;
+    height: 400px;
+    
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">الصفحة الرئيسية</a>
+        <a href="أنميات.html">أنميات</a>
+        <a href="أفلام.html">أفلام</a>
+        <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
+        <a href="للدعم.html">للدعم</a>
+    </nav>
+    <header>
+        <h1>مشاهدة الحلقة 2</h1>
+    </header>
+    <main>
+        <div class="buttons">
+            <button onclick="changeVideo('https://www.mp4upload.com/embed-ncs90k2mm1vq.html')">SD</button>
+            <button onclick="changeVideo('https://www.mp4upload.com/embed-e3ncqs0zcq98.html')">HD</button>
+            <button onclick="changeVideo('https://www.mp4upload.com/embed-qplvs84nfi5k.html')">FHD</button>
+        </div>
+        <div class="video-container">
+            <IFRAME id="videoFrame" SRC="https://www.mp4upload.com/embed-ncs90k2mm1vq.html" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=800 HEIGHT=400 allowfullscreen></IFRAME>
+        </div>
+    </main>
+    
+    <script>
+        function changeVideo(src) {
+            document.getElementById('videoFrame').src = src;
+        }
+    </script>
+    </main>
+</body>
+</html>
