@@ -147,17 +147,21 @@
             <button onclick="changeVideo('https://www.mp4upload.com/embed-7z86hwcjrtn7.html')">FHD</button>
         </div>
         <div class="video-container">
-         <iframe src="https://send.cm/embed-s8hyrnsq72w5.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="800" height="400" allowfullscreen></iframe>
+         <div class="video-container">
+    <iframe id="videoFrame" src="https://send.cm/embed-s8hyrnsq72w5.html" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" width="800" height="400" allowfullscreen></iframe>
+</div>
 
 
-        </div>
+
+        
     </main>
     
-    <script>
-        function changeVideo(src) {
-            document.getElementById('videoFrame').src = src;
-        }
-    </script>
+   <script>
+function changeVideo(src) {
+    document.getElementById('videoFrame').src = src;
+}
+</script>
+
     </main>
     <script>
 function searchAnime() {
