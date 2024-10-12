@@ -32,6 +32,29 @@
             overflow: hidden;
             margin-bottom: 2em;
         }
+        @media (max-width: 767px) {
+            .video-container {
+                width: 100%;
+                height: auto;
+            }
+            .video-container iframe {
+                width: 100%;
+                    height: auto;
+            }
+            .buttons {
+                flex-wrap: wrap;
+            }
+            .buttons button {
+                margin: 5px 0;
+                width: 100%;
+            }
+            nav {
+                flex-direction: column;
+        }
+            nav a {
+                padding: 0.5em;
+            }
+        }
         video {
             width: 100%;
             height: auto;
