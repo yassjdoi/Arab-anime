@@ -23,7 +23,13 @@
             justify-content: space-around;
             background-color: #444;
             padding: 1em 0;
+            align-items: center; هذا قيد التجربة
         }
+        nav input[type="text"] {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+}
         nav a {
             color: #fff;
             text-decoration: none;
@@ -120,12 +126,13 @@
         <h1>مرحبا بك في موقع Arab Anime أصغر موقع لمشاهدة أنمي</h1>
     </header>
     <nav>
-        <a href="index.html">الصفحة الرئيسية</a>
-        <a href="أنميات.html">أنميات</a>
-        <a href="أفلام.html">أفلام</a>
-        <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
-        <a href="للدعم.html">للدعم</a>
-    </nav>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="أنميات.html">أنميات</a>
+    <a href="أفلام.html">أفلام</a>
+    <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
+    <a href="للدعم.html">للدعم</a>
+    <input type="text" id="searchBar" placeholder="ابحث عن الأنميات..." onkeyup="searchAnime()">
+</nav>
     <main>
         <h2 style="text-align: right;">آخر الأنميات المضافة:</h2>
         <div class="anime-list">
@@ -166,5 +173,20 @@
             
             </div>
     </main>
+    <script>
+function searchAnime() {
+    let input = document.getElementById('searchBar').value.toLowerCase();
+    let animeItems = document.getElementsByClassName('anime-item');
+
+    for (let i = 0; i < animeItems.length; i++) {
+        let title = animeItems[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+        if (title.includes(input)) {
+            animeItems[i].style.display = "block";
+        } else {
+            animeItems[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>
