@@ -111,6 +111,33 @@
     visibility: hidden;
     opacity: 0;
 }
+        .search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 0.5em;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+}
+
+.search-container button:hover {
+    background-color: #777;
+}
+
 /* Media Queries */
  
 
@@ -121,6 +148,8 @@
    }
     </style>
 </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <body>
     <header>
         <h1>مرحبا بك في موقع Arab Anime أصغر موقع لمشاهدة أنمي</h1>
@@ -131,8 +160,12 @@
     <a href="أفلام.html">أفلام</a>
     <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
     <a href="للدعم.html">للدعم</a>
-    <input type="text" id="searchBar" placeholder="ابحث عن الأنميات..." onkeyup="searchAnime()">
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="ابحث عن الأنميات..." onkeyup="searchAnime()">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
 </nav>
+
     <main>
         <h2 style="text-align: right;">آخر الأنميات المضافة:</h2>
         <div class="anime-list">
