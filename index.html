@@ -111,7 +111,7 @@
     visibility: hidden;
     opacity: 0;
 }
-        .search-container {
+.search-container {
     display: flex;
     align-items: center;
 }
@@ -138,6 +138,7 @@
     background-color: #777;
 }
 
+
 /* Media Queries */
  
 
@@ -161,13 +162,25 @@
     <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
     <a href="للدعم.html">للدعم</a>
     <div class="search-container">
-        <input type="text" id="searchBar" placeholder="ابحث عن الأنميات..." onkeyup="searchAnime()">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <input type="text" id="searchBar" placeholder="ابحث عن الأنميات...">
+        <button type="button" onclick="searchAnime()"><i class="fa fa-search"></i></button>
     </div>
 </nav>
 
     <main>
         <h2 style="text-align: right;">آخر الأنميات المضافة:</h2>
+        <div class="anime-list">
+            <div class="anime-item">
+                <a href="Ao no Hako.html"><img src="Ao-no-Hako-413x559.jpg" alt="Anime 5"></a>
+                <a href="Resume.html"><h3>Ao no Hako</h3></a>
+                <div class="tooltiptext"><p>دايكي اينوماتا عضو في نادي كرة الريشة للرجال يقع في حب تشيناتسو كانو وهي فتاة تكبره بسنة واحده يلتقيان كل صباح في صالة الالعاب الرياضية للتدريب الصباحي في احد الايام تتغير المسافة بينهما.</p></div>
+            </div>
+            
+            
+        </div>
+    </main>
+     <main>
+        <h2 style="text-align: right;">آخر الأفلام المضافة:</h2>
         <div class="anime-list">
             <div class="anime-item">
                 <a href="Ao no Hako.html"><img src="Ao-no-Hako-413x559.jpg" alt="Anime 5"></a>
@@ -206,7 +219,7 @@
             
             </div>
     </main>
-    <script>
+<script>
 function searchAnime() {
     let input = document.getElementById('searchBar').value.toLowerCase();
     let animeItems = document.getElementsByClassName('anime-item');
@@ -221,5 +234,6 @@ function searchAnime() {
     }
 }
 </script>
+
 </body>
 </html>
