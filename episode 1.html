@@ -132,10 +132,7 @@
     <a href="أفلام.html">أفلام</a>
     <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
     <a href="للدعم.html">للدعم</a>
-    <div class="search-container">
-        <input type="text" id="searchBar" placeholder="ابحث عن الأنميات أو الأفلام...">
-        <button type="button" onclick="searchAnime()"><i class="fa fa-search"></i></button>
-    </div>
+    
 </nav>
     <header>
         <h1>مشاهدة الحلقة 1</h1>
@@ -157,20 +154,6 @@
         }
     </script>
     </main>
-    <script>
-function searchAnime() {
-    let input = document.getElementById('searchBar').value.toLowerCase();
-    let animeItems = document.getElementsByClassName('anime-item');
 
-    for (let i = 0; i < animeItems.length; i++) {
-        let title = animeItems[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-        if (title.includes(input)) {
-            animeItems[i].style.display = "block";
-        } else {
-            animeItems[i].style.display = "none";
-        }
-    }
-}
-</script>
 </body>
 </html>
