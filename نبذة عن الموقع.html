@@ -82,11 +82,7 @@
 <body>
     <nav>
     
-    <div class="search-container">
-       
-        <button type="button" onclick="searchAnime()"><i class="fa fa-search"></i></button>
-         <input type="text" id="searchBar" placeholder="ابحث عن الأنميات أو الأفلام...">
-    </div>
+    
     <a href="للدعم.html">للدعم</a>
     <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
     
@@ -99,26 +95,7 @@
     <p>هذا الموقع مازال تحت التجربة و يخضع للصيانة باستمرار </p>
     <p> "yassine"كل الحقوق محفوظة لصاحب الموقع</p>
 
-    <script>
-    function searchAnime() {
-        let input = document.getElementById('searchBar').value.toLowerCase();
-        let animeItems = document.getElementsByClassName('anime-item');
-        for (let i = 0; i < animeItems.length; i++) {
-            let title = animeItems[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-            if (title.includes(input)) {
-                animeItems[i].style.display = "block";
-            } else {
-                animeItems[i].style.display = "none";
-            }
-        }
-    }
 
-    document.getElementById('searchBar').addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            searchAnime();
-        }
-    });
-</script>
 
 </body>
 </html>
