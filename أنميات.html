@@ -140,21 +140,7 @@
             
         </div>
     </main>
-    <script>
-function searchAnime() {
-    let input = document.getElementById('searchBar').value.toLowerCase();
-    let animeItems = document.getElementsByClassName('anime-item');
-
-    for (let i = 0; i < animeItems.length; i++) {
-        let title = animeItems[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-        if (title.includes(input)) {
-            animeItems[i].style.display = "block";
-        } else {
-            animeItems[i].style.display = "none";
-        }
-    }
-}
-</script>
+    
     <script>
     function searchAnime() {
         let input = document.getElementById('searchBar').value.toLowerCase();
