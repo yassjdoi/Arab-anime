@@ -112,6 +112,10 @@
 .anime-item a:hover {
     text-decoration: underline; /* إضافة التزيين عند التحويم إذا أردت */
 }
+.hide-all {
+    display: none;
+}
+
 
 /* Media Queries */
  
@@ -128,53 +132,69 @@
 <body>
     
     <nav>
-    <a href="index.html">الصفحة الرئيسية</a>
-    <a href="أنميات.html">أنميات</a>
-    <a href="أفلام.html">أفلام</a>
-    <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
-    <a href="للدعم.html">للدعم</a>
-    <div class="search-container">
-        <input type="text" id="searchBar" placeholder="ابحث عن الأفلام...">
-        <button type="button" onclick="searchAnime()"><i class="fa fa-search"></i></button>
-    </div>
-</nav>
+        <a href="index.html">الصفحة الرئيسية</a>
+        <a href="أنميات.html">أنميات</a>
+        <a href="أفلام.html">أفلام</a>
+        <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
+        <a href="للدعم.html">للدعم</a>
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="ابحث عن الأنميات أو الأفلام...">
+            <button type="button" onclick="searchAnime()"><i class="fa fa-search"></i></button>
+        </div>
+    </nav>
     <main>
-        <h2 style="text-align: right;">الأفلام المتوفرة في الموقع:</h2>
+        <h2 id="animeHeader" style="text-align: right;">الأفلام المتوفرة في الموقع:</h2>
         <div class="anime-list">
-            
             <div class="anime-item">
-                <a href="
-Blue Lock: Episode Nagi.html"><img src="https://th.bing.com/th/id/OIP.Cl3fAJEbOSxzOo3ZkG5-ZwHaKd?rs=1&pid=ImgDetMain" alt="Anime 2"></a>
-                <a href="
-Resume(blen).html"><h3>Blue lock-Episode Nagi</h3></a>
+                <a href="Blue Lock: Episode Nagi.html"><img src="https://th.bing.com/th/id/OIP.Cl3fAJEbOSxzOo3ZkG5-ZwHaKd?rs=1&pid=ImgDetMain" alt="Anime 2"></a>
+                <a href="Resume(blen).html"><h3>Blue lock-Episode Nagi</h3></a>
             </div>
             <div class="anime-item">
                 <img src="https://th.bing.com/th/id/OIP.SaE9oF2cdjqk1fPy1qmqMgHaKS?rs=1&pid=ImgDetMain" alt="Anime 3">
                 <h3>Dragon ball super Broly</h3>
             </div>
         </div>
+        <h3 id="noResultsMessage" style="display:none; color: rgb(255, 255, 255);">العنوان غير متواجد أو لم تكتبه بشكل صحيح :)</h3>
     </main>
-   
+    
     <script>
-    function searchAnime() {
-        let input = document.getElementById('searchBar').value.toLowerCase();
-        let animeItems = document.getElementsByClassName('anime-item');
-        for (let i = 0; i < animeItems.length; i++) {
-            let title = animeItems[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
-            if (title.includes(input)) {
-                animeItems[i].style.display = "block";
+        function searchAnime() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let animeItems = document.getElementsByClassName('anime-item');
+            let found = false;
+            for (let i = 0; i < animeItems.length; i++) {
+                let title = animeItems[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (title.includes(input)) {
+                    animeItems[i].style.display = "block";
+                    found = true;
+                } else {
+                    animeItems[i].style.display = "none";
+                }
+            }
+            let noResultsMessage = document.getElementById('noResultsMessage');
+            let header = document.getElementById('animeHeader');
+            if (!found) {
+                noResultsMessage.style.display = "block";
+                header.style.display = "none"; // إخفاء العنوان
             } else {
-                animeItems[i].style.display = "none";
+                noResultsMessage.style.display = "none";
+                header.style.display = "none"; // إخفاء العنوان عند العثور على نتائج أيضًا
             }
         }
-    }
-
-    document.getElementById('searchBar').addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            searchAnime();
-        }
-    });
-</script>
+    
+        document.getElementById('searchBar').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                searchAnime();
+            }
+        });
+    </script>
+    
+            
+        
+        
+        
+        
+        
 
 </body>
 </html>
