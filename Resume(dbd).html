@@ -148,6 +148,10 @@
     <a href="أفلام.html">أفلام</a>
     <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
     <a href="للدعم.html">للدعم</a>
+        <div class="search-container">
+        <input type="text" id="searchBar" placeholder="ابحث عن الأنميات أو الأفلام...">
+        <button type="button" onclick="searchAnime()"><i class="fa fa-search"></i></button>
+    </div>
     
 </nav>
     <header>
@@ -169,6 +173,17 @@
             </div>
    
     </main>
-   
+   <script>
+        function searchAnime() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            window.location.href = "search-page.html?query=" + encodeURIComponent(input);
+        }
+    
+        document.getElementById('searchBar').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                searchAnime();
+            }
+        });
+    </script>
 </body>
 </html>
