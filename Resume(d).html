@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabe Anime</title>
+    <link rel="icon" type="image/x-icon" href="Arab Anime logo with Shinobi clothes and the name Arab Anime.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        header {
+            background-color: #333;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 2em;
+        }
+        .anime-summary {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #333;
+            padding: 2em;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            
+        }
+        .anime-summary img {
+            width: 200px;
+            height: auto;
+            margin-right: 2em;
+            margin-left: 3em;
+            border-radius: 10px;
+        }
+       
+
+
+  
+
+        .episode-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+            margin-top: 2em;
+        }
+        .episode-item {
+            background-color: #444;
+            padding: 1em;
+            border-radius: 5px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .episode-item:hover {
+            transform: scale(1.05);
+        }
+        .episode-item img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 1em 0;
+         }
+         nav a:hover {
+            background-color: #555;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+        .episode-item img {
+    width: 60%;
+    border-radius: 5px;
+    filter: blur(2px);
+
+}
+.episode-item h3 {
+    color: #fff;
+    text-decoration: none;
+}
+        .search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 0.5em;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 16px;
+    width: 40px; /* ضبط العرض والارتفاع لتناسب الشكل الدائري */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container button:hover {
+    background-color: #777;
+}
+/* Media Queries */
+ 
+
+   @media (max-width: 767px) {
+       .anime-item {
+           width: 100%;
+       }
+   }
+    </style>
+</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+    <nav>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="أنميات.html">أنميات</a>
+    <a href="أفلام.html">أفلام</a>
+    <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
+    <a href="للدعم.html">للدعم</a>
+        <div class="search-container">
+        <input type="text" id="searchBar" placeholder="ابحث عن الأنميات أو الأفلام...">
+        <button type="button" onclick="searchAnime()"><i class="fa fa-search"></i></button>
+    </div>
+    
+</nav>
+    <header>
+        <h1>Dandadan</h1>
+    </header>
+    <main>
+        <div class="anime-summary">
+            <img src="https://i.postimg.cc/PfBf1gdk/Dandadan-413x559-1.jpg" alt="غلاف الأنمي">
+            <div>
+                <h2>ملخص الأنمي:</h2>
+                <p>القصة تتحدث عن كين تاكاكورا هو شاب عاشق للسحر ولا يؤمن بالأشباح بينما صديقته مومو أياسي لا تؤمن بوجود الكائنات الفضائية لكنهما معًا سيعثرون على لغز يتحدى جميع معتقداتهم وأعرافهم فتبدأ قصة مثيرة للاهتمام!</p>
+            </div>
+        </div>
+        <div class="episode-list">
+            <div class="episode-item">
+                <a href="episode 1(d).html">
+                    <img src="https://i.postimg.cc/PfBf1gdk/Dandadan-413x559-1.jpg" alt="الحلقة 1">
+                <h3>الحلقة 1</h3>
+            </div>
+            <div class="episode-item">
+                
+                <a href="episode 2(d).html">
+                    <img src="https://i.postimg.cc/PfBf1gdk/Dandadan-413x559-1.jpg" alt="الحلقة 2">
+                <h3>الحلقة 2</h3>
+            </div>
+            
+            <!-- إضافة المزيد من الحلقات هنا -->
+        </div>
+    </main>
+  <script>
+        function searchAnime() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            window.location.href = "search-page.html?query=" + encodeURIComponent(input);
+        }
+    
+        document.getElementById('searchBar').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                searchAnime();
+            }
+        });
+    </script>
+</body>
+</html>
