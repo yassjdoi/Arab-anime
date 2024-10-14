@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabe Anime</title>
+    <link rel="icon" type="image/x-icon" href="Arab Anime logo with Shinobi clothes and the name Arab Anime.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        header {
+            background-color: #333;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 2em;
+        }
+        .episode-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .episode-item {
+            background-color: #333;
+            margin-bottom: 1em;
+            padding: 1em;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .episode-item a {
+            color: #1da1f2;
+            text-decoration: none;
+        }
+        .episode-item a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 1em 0;
+         }
+         nav a:hover {
+            background-color: #555;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+        .search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 0.5em;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 16px;
+    width: 40px; /* ضبط العرض والارتفاع لتناسب الشكل الدائري */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container button:hover {
+    background-color: #777;
+}
+/* Media Queries */
+ 
+
+   @media (max-width: 767px) {
+       .anime-item {
+           width: 100%;
+       }
+   }
+       
+        
+        
+        
+    </style>
+</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+    <nav>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="أنميات.html">أنميات</a>
+    <a href="أفلام.html">أفلام</a>
+    <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
+    <a href="للدعم.html">للدعم</a>
+        <div class="search-container">
+        <input type="text" id="searchBar" placeholder="ابحث عن الأنميات أو الأفلام...">
+        <button type="button" onclick="searchAnime()"><i class="fa fa-search"></i></button>
+    </div>
+    
+</nav>
+    <header>
+        <h1>الحلقات المتوفرة من Uzumaki :</h1>
+    </header>
+    <main>
+        <div class="episode-list">
+            <div class="episode-item">
+                
+                
+                <span>الحلقة 1:</span>
+                <a href="episode 1(u).html">مشاهدة</a>
+            </div>
+            <div class="episode-item">
+                
+                
+                <span>الحلقة 2:</span>
+                <a href="episode 2(u).html">مشاهدة</a>
+            </div>
+            <div class="episode-item">
+                
+                
+                <span>الحلقة 3:</span>
+                <a href="episode 3(u).html">مشاهدة</a>
+            </div>
+            <!-- Ajouter plus d'épisodes ici -->
+        </div>
+    </main>
+   
+<script>
+        function searchAnime() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            window.location.href = "search-page.html?query=" + encodeURIComponent(input);
+        }
+    
+        document.getElementById('searchBar').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                searchAnime();
+            }
+        });
+    </script>
+    <footer>
+        <p>&copy; 2024 Arab Anime</p>
+    </footer>
+</body>
+</html>
