@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabe Anime</title>
+    <link rel="icon" type="image/x-icon" href="Arab Anime logo with Shinobi clothes and the name Arab Anime.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+        header {
+            background-color: #333;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .video-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2em;
+        }
+        
+        video {
+            width: 100%;
+            height: auto;
+        }
+        footer {
+            background-color: #333;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #444;
+            padding: 1em 0;
+         }
+         nav a:hover {
+            background-color: #555;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+        .buttons {
+        text-align: center;
+        margin-bottom: 10px;
+        
+    }
+    .buttons button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        background-color: #555;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .buttons button:hover {
+        background-color: #777;
+    }
+    .video-container iframe {
+    width: 100%;
+    height: 100%;
+}
+.video-container {
+    width: 800px;
+    height: 400px;
+    
+}
+        .search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-container button {
+    padding: 0.5em;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 16px;
+    width: 40px; /* ضبط العرض والارتفاع لتناسب الشكل الدائري */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container button:hover {
+    background-color: #777;
+}
+/* Media Queries */
+ 
+
+   
+
+    </style>
+</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+   <nav>
+    <a href="index.html">الصفحة الرئيسية</a>
+    <a href="أنميات.html">أنميات</a>
+    <a href="أفلام.html">أفلام</a>
+    <a href="نبذة عن الموقع.html">نبذة عن الموقع</a>
+    <a href="للدعم.html">للدعم</a>
+       <div class="search-container">
+        <input type="text" id="searchBar" placeholder="ابحث عن الأنميات أو الأفلام...">
+        <button type="button" onclick="searchAnime()"><i class="fa fa-search"></i></button>
+    </div>
+    
+</nav>
+    <header>
+        <h1>مشاهدة الحلقة 2</h1>
+    </header>
+    <main>
+        <div class="buttons">
+        
+            <button onclick="changeVideo('https://mega.nz/embed/vcYTyT5J#x6J6NnlerTUJOJhYKRhqfPVPH0yTL7LFp1gI05Yl7W0')">HD</button>
+            <button onclick="changeVideo('https://mega.nz/embed/PNwxzDIR#2S1-2KqgfhIGCqhxK15d2z1DEe_eEAaAWLgMmhKMDHI')">FHD</button>
+        </div>
+        <div class="video-container">
+            <IFRAME id="videoFrame" SRC="https://mega.nz/embed/vcYTyT5J#x6J6NnlerTUJOJhYKRhqfPVPH0yTL7LFp1gI05Yl7W0" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=800 HEIGHT=400 allowfullscreen></IFRAME>
+        </div>
+    </main>
+    
+    <script>
+        function changeVideo(src) {
+            document.getElementById('videoFrame').src = src;
+        }
+    </script>
+    <script>
+        function searchAnime() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            window.location.href = "search-page.html?query=" + encodeURIComponent(input);
+        }
+    
+        document.getElementById('searchBar').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                searchAnime();
+            }
+        });
+    </script>
+    </main>
+
+</body>
+</html>
